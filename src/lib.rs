@@ -35,4 +35,17 @@ impl Node {
         }
 
     }
+
+    pub fn search (&self, characterArray: &Vec<char>) -> bool {
+        let firstChar = characterArray[0];
+        match self.children.get(&firstChar) {
+            None => false,
+            Some(entry) => {
+                if characterArray.len() == 1 {
+                    return entry.is_word;
+                }
+                entry.search(&characterArray[1..].to_vec())
+            }
+        }
+    }
 }

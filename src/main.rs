@@ -6,5 +6,5 @@ fn main() {
         let characterArray = word.chars().collect::<Vec<_>>();
         trie.add(&characterArray);
     }
-    println!("Trie is: {:?}", trie);
+    println!("Is thes there: {:?}", trie.search(&"thes".chars().collect::<Vec<_>>()));
 }
